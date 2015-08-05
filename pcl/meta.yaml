@@ -1,0 +1,22 @@
+package:
+  name: pcl
+  version: 1.7.1
+
+source:
+  fn:  pcl-1.7.1.tar.gz
+  url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.1.tar.gz
+
+requirements:
+  build:
+    - cmake    [not win]
+    - eigen3
+    - flann
+    - boost    <1.56.0
+  run:
+    - eigen3
+    - flann
+    - boost    <1.56.0
+  
+about:
+  home: http://pointclouds.org/
+  license: BSD

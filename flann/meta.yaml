@@ -1,0 +1,17 @@
+package:
+  name: flann
+  version: 1.8.4
+
+source:
+  fn: flann-1.8.4-src.zip
+  url: http://people.cs.ubc.ca/~mariusm/uploads/FLANN/flann-1.8.4-src.zip
+  patches:
+    - vs2010.patch       [win]
+
+requirements:
+  build:
+    - cmake              [not win]
+  
+about:
+  home: http://www.cs.ubc.ca/research/flann/
+  license: BSD
