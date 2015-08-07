@@ -1,0 +1,15 @@
+package:
+  name: pkg-config
+  version: 0.28
+
+source:
+  fn:  pkg-config-lite-0.28-1_bin-win32.zip
+  url: http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1_bin-win32.zip
+
+test:
+  commands:
+    - pkg-config --help
+
+about:
+  home: http://www.freedesktop.org/wiki/Software/pkg-config/
+  license: GPL 2
