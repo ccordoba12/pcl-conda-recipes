@@ -1,0 +1,22 @@
+diff --git a/setup.py b/setup.py
+index d8a197d..93a760f 100644
+--- a/setup.py
++++ b/setup.py
+@@ -68,6 +68,12 @@ for flag in pkgconfig('--libs-only-other'):
+ ext_args['define_macros'].append(
+     ("EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET", "1"))
+ 
++# Fix compilation issues on Windows. See
++# https://github.com/strawlab/python-pcl/issues/60#issuecomment-70851238
++ext_args['extra_compile_args'].append("/EHsc")
++ext_args['include_dirs'].append(os.environ["LIBRARY_INC"])
++ext_args['include_dirs'].append(os.path.join(os.environ["LIBRARY_INC"], 'pcl-1.7'))
++
+ setup(name='python-pcl',
+       description='pcl wrapper',
+       url='http://github.com/strawlab/python-pcl',
+@@ -83,3 +89,4 @@ setup(name='python-pcl',
+                   ],
+       cmdclass={'build_ext': build_ext}
+       )
++
