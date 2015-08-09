@@ -8,11 +8,12 @@ source:
 
 requirements:
   build:
-    - cmake    [not win]
+    - cmake
+    - pkg-config
 
 test:
   files:
-    - test.cc  [not win]
+    - test.cc     [not win]
 
 about:
   home: http://eigen.tuxfamily.org/
