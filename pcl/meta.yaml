@@ -8,7 +8,7 @@ source:
 
 requirements:
   build:
-    - cmake    [not win]
+    - cmake
     - eigen3
     - flann
     - boost    <1.56.0
