@@ -1,0 +1,19 @@
+diff --git a/pcl/__init__.py b/pcl/__init__.py
+index fa7d71d..b4c0193 100644
+--- pcl/__init__.py
++++ pcl/__init__.py
+@@ -1,3 +1,7 @@
++# Add path to pcl dll's to PATH
++import os
++os.environ['PATH'] = r"/opt/anaconda1anaconda2anaconda3\Library\bin" + os.pathsep + os.environ['PATH']
++
+ # XXX do a more specific import!
+ from ._pcl import *
+
+@@ -23,6 +27,7 @@ def load(path, format=None):
+     return p
+
+
++
+ def save(cloud, path, format=None, binary=False):
+     """Save pointcloud to file.
