@@ -5,6 +5,10 @@ package:
 source:
   fn:  pcl-1.7.1.tar.gz
   url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.1.tar.gz
+  patches:
+    - supervoxel.patch      [win]
+    - gp3_surface.patch     [win]
+    - mls_smoothing.patch   [win]
 
 requirements:
   build:

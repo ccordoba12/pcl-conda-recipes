@@ -1,0 +1,19 @@
+--- tools/gp3_surface.cpp	Sun Aug  9 20:10:11 2015
++++ tools/gp3_surface.cpp	Sun Aug  9 20:12:32 2015
+@@ -92,7 +92,7 @@
+     if (pcl_isfinite (input->points[i].x))
+       cloud->push_back (input->points[i]);
+ 
+-  cloud->width = static_cast<uint32_t> (cloud->size ());
++  cloud->width = static_cast<boost::uint32_t> (cloud->size ());
+   cloud->height = 1;
+   cloud->is_dense = true;
+ 
+@@ -118,6 +118,7 @@
+ 
+   print_info ("[done, "); print_value ("%g", tt.toc ()); print_info (" ms : "); print_value ("%zu", output.polygons.size ()); print_info (" polygons]\n");
+ }
++
+ 
+ /* ---[ */
+ int

@@ -1,0 +1,19 @@
+--- tools/mls_smoothing.cpp	Sun Aug  9 20:15:55 2015
++++ tools/mls_smoothing.cpp	Sun Aug  9 20:17:21 2015
+@@ -100,7 +100,7 @@
+       xyz_cloud->push_back (xyz_cloud_pre->points[i]);
+   xyz_cloud->header = xyz_cloud_pre->header;
+   xyz_cloud->height = 1;
+-  xyz_cloud->width = static_cast<uint32_t> (xyz_cloud->size ());
++  xyz_cloud->width = static_cast<boost::uint32_t> (xyz_cloud->size ());
+   xyz_cloud->is_dense = false;
+   
+   
+@@ -137,6 +137,7 @@
+ 
+   toPCLPointCloud2 (*xyz_cloud_smoothed, output);
+ }
++
+ 
+ void
+ saveCloud (const std::string &filename, const pcl::PCLPointCloud2 &output)

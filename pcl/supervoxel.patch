@@ -1,0 +1,36 @@
+--- segmentation/include/pcl/segmentation/impl/supervoxel_clustering_old.hpp	Mon Oct  7 08:09:35 2013
++++ segmentation/include/pcl/segmentation/impl/supervoxel_clustering.hpp	Sun Aug  9 22:10:03 2015
+@@ -1020,7 +1020,7 @@
+   voxels->clear ();
+   voxels->resize (leaves_.size ());
+   typename pcl::PointCloud<PointT>::iterator voxel_itr = voxels->begin ();
+-  typename std::set<LeafContainerT*>::iterator leaf_itr;
++  typename std::set<LeafContainerT*>::const_iterator leaf_itr;
+   for (leaf_itr = leaves_.begin (); leaf_itr != leaves_.end (); ++leaf_itr, ++voxel_itr)
+   {
+     const VoxelData& leaf_data = (*leaf_itr)->getData ();
+@@ -1035,7 +1035,7 @@
+   normals = boost::make_shared<pcl::PointCloud<Normal> > ();
+   normals->clear ();
+   normals->resize (leaves_.size ());
+-  typename std::set<LeafContainerT*>::iterator leaf_itr;
++  typename std::set<LeafContainerT*>::const_iterator leaf_itr;
+   typename pcl::PointCloud<Normal>::iterator normal_itr = normals->begin ();
+   for (leaf_itr = leaves_.begin (); leaf_itr != leaves_.end (); ++leaf_itr, ++normal_itr)
+   {
+@@ -1044,13 +1044,14 @@
+   }
+ }
+ 
++
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ template <typename PointT> void
+ pcl::SupervoxelClustering<PointT>::SupervoxelHelper::getNeighborLabels (std::set<uint32_t> &neighbor_labels) const
+ {
+   neighbor_labels.clear ();
+   //For each leaf belonging to this supervoxel
+-  typename std::set<LeafContainerT*>::iterator leaf_itr;
++  typename std::set<LeafContainerT*>::const_iterator leaf_itr;
+   for (leaf_itr = leaves_.begin (); leaf_itr != leaves_.end (); ++leaf_itr)
+   {
+     //for each neighbor of the leaf
