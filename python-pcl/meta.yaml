@@ -3,11 +3,11 @@ package:
   version: 1.0
 
 source:
-    git_url: https://github.com/strawlab/python-pcl.git
-    git_rev: f17c686b63fe16a39ba612124def14dda2762525
-    patches:
-      - ext_args.patch                    [win]
-      - dlls.patch                        [win]
+  git_url: https://github.com/strawlab/python-pcl.git
+  git_rev: f17c686b63fe16a39ba612124def14dda2762525
+  patches:
+    - ext_args.patch                      [win]
+    - dlls.patch                          [win]
 
 build:
   has_prefix_files:
