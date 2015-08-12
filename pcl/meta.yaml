@@ -16,11 +16,15 @@ requirements:
     - eigen3
     - flann
     - boost    <1.56.0
+    - libpng                [unix]
+    - zlib                  [unix]
   run:
     - eigen3
     - flann
     - boost    <1.56.0
-  
+    - libpng                [unix]
+    - zlib                  [unix]
+
 about:
   home: http://pointclouds.org/
   license: BSD
