@@ -11,7 +11,7 @@ source:
 requirements:
   build:
     - cmake
-  
+
 about:
   home: http://www.cs.ubc.ca/research/flann/
   license: BSD
