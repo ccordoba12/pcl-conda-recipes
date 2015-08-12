@@ -3,8 +3,24 @@ package:
   version: 0.28
 
 source:
-  fn:  pkg-config-lite-0.28-1_bin-win32.zip
-  url: http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1_bin-win32.zip
+  fn:  pkg-config-lite-0.28-1_bin-win32.zip                                                              [win]
+  url: http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1_bin-win32.zip   [win]
+  fn:  pkg-config-0.28.zip
+  url: https://github.com/tpn/pkg-config/archive/pkg-config-0.28.zip
+
+build:
+  number: 1
+  detect_binary_files_with_prefix: 1
+
+requirements:
+  build:
+    - zlib       [not win]
+    - autoconf   [not win]
+    - python     [not win]
+    - automake   [not win]
+    - libtool    [not win]
+  run:
+    - zlib       [not win]
 
 test:
   commands:
