@@ -10,7 +10,7 @@ source:
     - dlls.patch                          [win]
 
 build:
-  has_prefix_files:
+  has_prefix_files:                       [win]
     - Lib/site-packages/pcl/__init__.py   [win]
 
 requirements:
