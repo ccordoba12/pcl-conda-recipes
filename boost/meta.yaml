@@ -11,7 +11,7 @@ source:
     - patch-atomic.diff    [osx]
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:	
@@ -21,6 +21,7 @@ requirements:
     - libpython            [win]
 
   run:
+    - python     <3
     - icu                  [unix]
 
 about:

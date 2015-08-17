@@ -22,6 +22,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
     ./bootstrap.sh \
         --prefix="${PREFIX}" \
+        --with-python="${PYTHON}" \
+        --with-python-root="${PREFIX} : ${PREFIX}/include/python${PY_VER}m ${PREFIX}/include/python${PY_VER}" \
         --with-icu="${PREFIX}" \
         | tee bootstrap.log 2>&1
 
@@ -33,6 +35,7 @@ if [ "$(uname)" == "Darwin" ]; then
         threading=multi \
         link=shared \
         toolset=clang \
+        python="${PY_VER}" \
         include="${INCLUDE_PATH}" \
         cxxflags="${CXXFLAGS}" \
         linkflags="${LINKFLAGS}" \
