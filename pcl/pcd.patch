@@ -1,5 +1,23 @@
 --- io/src/pcd_io_old.cpp	2015-08-17 18:34:46.000000000 -0500
-+++ io/src/pcd_io.cpp	2015-08-17 21:30:11.000000000 -0500
++++ io/src/pcd_io.cpp	2015-08-17 22:46:01.000000000 -0500
+@@ -83,7 +83,7 @@
+     PCL_DEBUG ("[pcl::PCDWriter::setLockingPermissions] File %s could not be locked!\n", file_name.c_str ());
+ 
+   namespace fs = boost::filesystem;
+-  fs::permissions (fs::path (file_name), fs::add_perms | fs::set_gid_on_exe);
++  //fs::permissions (fs::path (file_name), fs::add_perms | fs::set_gid_on_exe);
+ #endif
+ #endif
+ }
+@@ -100,7 +100,7 @@
+ #if BOOST_VERSION >= 104900
+   (void)file_name;
+   namespace fs = boost::filesystem;
+-  fs::permissions (fs::path (file_name), fs::remove_perms | fs::set_gid_on_exe);
++  //fs::permissions (fs::path (file_name), fs::remove_perms | fs::set_gid_on_exe);
+   lock.unlock ();
+ #endif
+ #endif
 @@ -130,7 +130,7 @@
  
    int specified_channel_count = 0;
