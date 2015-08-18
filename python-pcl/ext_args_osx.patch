@@ -1,0 +1,14 @@
+diff --git a/setup.py b/setup.py
+index d8a197d..4b7ac9d 100644
+--- setup.py
++++ setup.py
+@@ -68,6 +68,9 @@ for flag in pkgconfig('--libs-only-other'):
+ ext_args['define_macros'].append(
+     ("EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET", "1"))
+ 
++ext_args['extra_compile_args'].append("-stdlib=libstdc++")
++ext_args['extra_compile_args'].append("-mmacosx-version-min=10.6")
++
+ setup(name='python-pcl',
+       description='pcl wrapper',
+       url='http://github.com/strawlab/python-pcl',

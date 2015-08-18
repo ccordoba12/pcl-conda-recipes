@@ -6,17 +6,19 @@ source:
   git_url: https://github.com/strawlab/python-pcl.git
   git_rev: f17c686b63fe16a39ba612124def14dda2762525
   patches:
-    - ext_args.patch                      [win]
-    - dlls.patch                          [win]
+    - ext_args_win.patch                      [win]
+    - dlls.patch                              [win]
+    - ext_args_osx.patch                      [osx]
 
 build:
-  has_prefix_files:                       [win]
-    - Lib/site-packages/pcl/__init__.py   [win]
+  number: 1
+  has_prefix_files:                           [win]
+    - Lib/site-packages/pcl/__init__.py       [win]
 
 requirements:
   build:
     - python
-    - cython
+    - cython      <0.22
     - numpy
     - pkg-config
     - pcl
