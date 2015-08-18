@@ -9,20 +9,24 @@ source:
     - supervoxel.patch      [win]
     - gp3_surface.patch     [win]
     - mls_smoothing.patch   [win]
+    - pcd.patch             [osx]
+
+build:
+  number: 1
 
 requirements:
   build:
+    - boost    <1.56.0
     - cmake
     - eigen3
     - flann
-    - boost    <1.56.0
     - libpng                [unix]
     - zlib                  [unix]
     - pkg-config            [unix]
   run:
+    - boost    <1.56.0
     - eigen3
     - flann
-    - boost    <1.56.0
     - libpng                [unix]
     - zlib                  [unix]
 
