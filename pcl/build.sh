@@ -24,7 +24,8 @@ if [ "$(uname)" == "Linux" ]; then
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBOOST_LIBRARYDIR=$PREFIX/lib \
     -DCMAKE_C_COMPILER="${PREFIX}"/bin/gcc \
-    -DCMAKE_CXX_COMPILER="${PREFIX}"/bin/g++
+    -DCMAKE_CXX_COMPILER="${PREFIX}"/bin/g++ \
+    -DCMAKE_PREFIX_PATH="${PREFIX}"
 fi
 
 
@@ -43,6 +44,7 @@ if [ "$(uname)" == "Darwin" ]; then
     -DBUILD_SHARED_LIBS:BOOL=ON \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBOOST_LIBRARYDIR=$PREFIX/lib \
+    -DCMAKE_PREFIX_PATH="${PREFIX}" \
     -DCMAKE_OSX_DEPLOYMENT_TARGET=''
 fi
 

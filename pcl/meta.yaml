@@ -12,12 +12,12 @@ source:
     - pcd.patch             [osx]
 
 build:
-  number: 2                 [osx]
-  number: 3                 [linux]
+  number: 3                 [osx]
+  number: 4                 [linux]
 
 requirements:
   build:
-    - boost    <1.56.0
+    - boost       <1.56.0
     - cmake
     - eigen3
     - flann
@@ -26,7 +26,7 @@ requirements:
     - pkg-config            [unix]
     - gcc                   [linux]
   run:
-    - boost    <1.56.0
+    - boost       <1.56.0
     - eigen3
     - flann
     - libpng                [unix]
