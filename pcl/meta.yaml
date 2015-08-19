@@ -12,7 +12,8 @@ source:
     - pcd.patch             [osx]
 
 build:
-  number: 2
+  number: 2                 [osx]
+  number: 3                 [linux]
 
 requirements:
   build:
@@ -23,12 +24,14 @@ requirements:
     - libpng                [unix]
     - zlib                  [unix]
     - pkg-config            [unix]
+    - gcc                   [linux]
   run:
     - boost    <1.56.0
     - eigen3
     - flann
     - libpng                [unix]
     - zlib                  [unix]
+    - libgcc                [linux]
 
 about:
   home: http://pointclouds.org/
