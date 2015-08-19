@@ -11,7 +11,8 @@ source:
     - patch-atomic.diff    [osx]
 
 build:
-  number: 2
+  number: 2                [osx]
+  number: 3                [linux]
 
 requirements:
   build:	
@@ -19,10 +20,12 @@ requirements:
     - icu                  [unix]
     - bzip2                [unix]
     - libpython            [win]
+    - gcc                  [linux]
 
   run:
     - python     <3
     - icu                  [unix]
+    - libgcc               [linux]
 
 about:
   home: http://www.boost.org/
