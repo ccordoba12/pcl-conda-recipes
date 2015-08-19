@@ -9,18 +9,18 @@ source:
   url: https://github.com/tpn/pkg-config/archive/pkg-config-0.28.zip
 
 build:
-  number: 1
-  detect_binary_files_with_prefix: 1
+  number: 1                             [unix]
+  detect_binary_files_with_prefix: 1    [unix]
 
 requirements:
   build:
-    - zlib       [not win]
-    - autoconf   [not win]
-    - python     [not win]
-    - automake   [not win]
-    - libtool    [not win]
+    - zlib                              [not win]
+    - autoconf                          [not win]
+    - python                            [not win]
+    - automake                          [not win]
+    - libtool                           [not win]
   run:
-    - zlib       [not win]
+    - zlib                              [not win]
 
 test:
   commands:
