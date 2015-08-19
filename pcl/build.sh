@@ -3,12 +3,8 @@ mkdir build
 cd build
 
 CMAKE_GENERATOR="Unix Makefiles"
-CMAKE_ARCH="-m"$ARCH
 
 if [ "$(uname)" == "Linux" ]; then
-  export CFLAGS="$CFLAGS $CMAKE_ARCH"
-  export LDLAGS="$LDLAGS $CMAKE_ARCH"
-
   cmake .. -G "$CMAKE_GENERATOR" \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_apps:BOOL=OFF \
