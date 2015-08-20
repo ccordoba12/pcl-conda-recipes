@@ -11,21 +11,24 @@ source:
     - ext_args_osx.patch                      [osx]
 
 build:
-  number: 1
+  number: 1                                   [osx]
+  number: 2                                   [linux]
   has_prefix_files:                           [win]
     - Lib/site-packages/pcl/__init__.py       [win]
 
 requirements:
   build:
     - python
-    - cython      <0.22
+    - cython        <0.22
     - numpy
     - pkg-config
     - pcl
+    - gcc                                     [linux]
   run:
     - python
     - numpy
     - pcl
+    - libgcc                                  [linux]
 
 test:
   imports:
