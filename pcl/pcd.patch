@@ -1,0 +1,198 @@
+--- io/src/pcd_io_old.cpp	2015-08-17 18:34:46.000000000 -0500
++++ io/src/pcd_io.cpp	2015-08-17 22:46:01.000000000 -0500
+@@ -83,7 +83,7 @@
+     PCL_DEBUG ("[pcl::PCDWriter::setLockingPermissions] File %s could not be locked!\n", file_name.c_str ());
+ 
+   namespace fs = boost::filesystem;
+-  fs::permissions (fs::path (file_name), fs::add_perms | fs::set_gid_on_exe);
++  //fs::permissions (fs::path (file_name), fs::add_perms | fs::set_gid_on_exe);
+ #endif
+ #endif
+ }
+@@ -100,7 +100,7 @@
+ #if BOOST_VERSION >= 104900
+   (void)file_name;
+   namespace fs = boost::filesystem;
+-  fs::permissions (fs::path (file_name), fs::remove_perms | fs::set_gid_on_exe);
++  //fs::permissions (fs::path (file_name), fs::remove_perms | fs::set_gid_on_exe);
+   lock.unlock ();
+ #endif
+ #endif
+@@ -130,7 +130,7 @@
+ 
+   int specified_channel_count = 0;
+ 
+-  if (file_name == "" || !boost::filesystem::exists (file_name))
++  if (file_name == "") //|| !boost::filesystem::exists (file_name))
+   {
+     PCL_ERROR ("[pcl::PCDReader::readHeader] Could not find file '%s'.\n", file_name.c_str ());
+     return (-1);
+@@ -413,7 +413,7 @@
+ 
+   int specified_channel_count = 0;
+ 
+-  if (file_name == "" || !boost::filesystem::exists (file_name))
++  if (file_name == "") //|| !boost::filesystem::exists (file_name))
+   {
+     PCL_ERROR ("[pcl::PCDReader::readHeader] Could not find file '%s'.\n", file_name.c_str ());
+     return (-1);
+@@ -685,7 +685,7 @@
+   // Setting the is_dense property to true by default
+   cloud.is_dense = true;
+ 
+-  if (file_name == "" || !boost::filesystem::exists (file_name))
++  if (file_name == "") //|| !boost::filesystem::exists (file_name))
+   {
+     PCL_ERROR ("[pcl::PCDReader::read] Could not find file '%s'.\n", file_name.c_str ());
+     return (-1);
+@@ -1308,8 +1308,8 @@
+     return (-1);
+   }
+   // Mandatory lock file
+-  boost::interprocess::file_lock file_lock;
+-  setLockingPermissions (file_name, file_lock);
++  //boost::interprocess::file_lock file_lock;
++  //setLockingPermissions (file_name, file_lock);
+ 
+   int nr_points  = cloud.width * cloud.height;
+   int point_size = static_cast<int> (cloud.data.size () / nr_points);
+@@ -1394,7 +1394,7 @@
+     fs << result << "\n";
+   }
+   fs.close ();              // Close file
+-  resetLockingPermissions (file_name, file_lock);
++  //resetLockingPermissions (file_name, file_lock);
+   return (0);
+ }
+ 
+@@ -1424,8 +1424,8 @@
+     return (-1);
+   }
+   // Mandatory lock file
+-  boost::interprocess::file_lock file_lock;
+-  setLockingPermissions (file_name, file_lock);
++  //boost::interprocess::file_lock file_lock;
++  //setLockingPermissions (file_name, file_lock);
+ 
+ #else
+   int fd = pcl_open (file_name.c_str (), O_RDWR | O_CREAT | O_TRUNC, static_cast<mode_t> (0600));
+@@ -1435,15 +1435,15 @@
+     return (-1);
+   }
+   // Mandatory lock file
+-  boost::interprocess::file_lock file_lock;
+-  setLockingPermissions (file_name, file_lock);
++  //boost::interprocess::file_lock file_lock;
++  //setLockingPermissions (file_name, file_lock);
+ 
+   // Stretch the file size to the size of the data
+   off_t result = pcl_lseek (fd, getpagesize () + cloud.data.size () - 1, SEEK_SET);
+   if (result < 0)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinary] lseek errno: %d strerror: %s\n", errno, strerror (errno));
+     PCL_ERROR ("[pcl::PCDWriter::writeBinary] Error during lseek ()!\n");
+     return (-1);
+@@ -1453,7 +1453,7 @@
+   if (result != 1)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinary] Error during write ()!\n");
+     return (-1);
+   }
+@@ -1469,7 +1469,7 @@
+   if (map == reinterpret_cast<char*> (-1))    // MAP_FAILED
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinary] Error during mmap ()!\n");
+     return (-1);
+   }
+@@ -1494,7 +1494,7 @@
+   if (munmap (map, static_cast<size_t> (data_idx + cloud.data.size ())) == -1)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinary] Error during munmap ()!\n");
+     return (-1);
+   }
+@@ -1505,7 +1505,7 @@
+ #else
+   pcl_close (fd);
+ #endif
+-  resetLockingPermissions (file_name, file_lock);
++  //resetLockingPermissions (file_name, file_lock);
+   return (0);
+ }
+ 
+@@ -1543,8 +1543,8 @@
+   }
+ #endif
+   // Mandatory lock file
+-  boost::interprocess::file_lock file_lock;
+-  setLockingPermissions (file_name, file_lock);
++  //boost::interprocess::file_lock file_lock;
++  //setLockingPermissions (file_name, file_lock);
+ 
+   size_t fsize = 0;
+   size_t data_size = 0;
+@@ -1623,7 +1623,7 @@
+ #ifndef _WIN32
+     pcl_close (fd);
+ #endif
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     throw pcl::IOException ("[pcl::PCDWriter::writeBinaryCompressed] Error during compression!");
+     return (-1);
+   }
+@@ -1634,7 +1634,7 @@
+   if (result < 0)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinaryCompressed] lseek errno: %d strerror: %s\n", errno, strerror (errno));
+     PCL_ERROR ("[pcl::PCDWriter::writeBinaryCompressed] Error during lseek ()!\n");
+     return (-1);
+@@ -1644,7 +1644,7 @@
+   if (result != 1)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinaryCompressed] Error during write ()!\n");
+     return (-1);
+   }
+@@ -1661,7 +1661,7 @@
+   if (map == reinterpret_cast<char*> (-1))    // MAP_FAILED
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinaryCompressed] Error during mmap ()!\n");
+     return (-1);
+   }
+@@ -1685,7 +1685,7 @@
+   if (munmap (map, (compressed_final_size)) == -1)
+   {
+     pcl_close (fd);
+-    resetLockingPermissions (file_name, file_lock);
++    //resetLockingPermissions (file_name, file_lock);
+     PCL_ERROR ("[pcl::PCDWriter::writeBinaryCompressed] Error during munmap ()!\n");
+     return (-1);
+   }
+@@ -1696,7 +1696,7 @@
+ #else
+   pcl_close (fd);
+ #endif
+-  resetLockingPermissions (file_name, file_lock);
++  //resetLockingPermissions (file_name, file_lock);
+ 
+   free (only_valid_data);
+   free (temp_buf);

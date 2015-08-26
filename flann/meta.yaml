@@ -8,10 +8,17 @@ source:
   patches:
     - win64.patch       [win]
 
+build:
+  number: 1             [linux]
+
 requirements:
   build:
     - cmake
-  
+    - gcc               [linux]
+
+  run:
+    - libgcc            [linux]
+
 about:
   home: http://www.cs.ubc.ca/research/flann/
   license: BSD

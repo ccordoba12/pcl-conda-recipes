@@ -1,26 +1,38 @@
 package:
   name: pcl
-  version: 1.7.1
+  version: 1.7.2
 
 source:
-  fn:  pcl-1.7.1.tar.gz
-  url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.1.tar.gz
+  fn:  pcl-1.7.2.tar.gz
+  url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz
   patches:
     - supervoxel.patch      [win]
     - gp3_surface.patch     [win]
     - mls_smoothing.patch   [win]
+    - pcd.patch             [osx]
+
+build:
+  number: 3                 [osx]
+  number: 4                 [linux]
 
 requirements:
   build:
+    - boost       <1.56.0
     - cmake
     - eigen3
     - flann
-    - boost    <1.56.0
+    - libpng                [unix]
+    - zlib                  [unix]
+    - pkg-config            [unix]
+    - gcc                   [linux]
   run:
+    - boost       <1.56.0
     - eigen3
     - flann
-    - boost    <1.56.0
-  
+    - libpng                [unix]
+    - zlib                  [unix]
+    - libgcc                [linux]
+
 about:
   home: http://pointclouds.org/
   license: BSD
