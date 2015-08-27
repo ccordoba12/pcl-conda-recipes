@@ -4,12 +4,12 @@ package:
 
 source:
   fn:  gtest-1.7.0.zip
-  url: https://googletest.googlecode.com/files/gtest-1.7.0.zip
+  url: https://github.com/google/googletest/archive/release-1.7.0.zip
 
 requirements:
   build:
     - cmake
 
 about:
-  home: http://www.cs.ubc.ca/research/flann/
+  home: https://github.com/google/googletest
   license: BSD
