@@ -11,6 +11,7 @@ source:
     - pcd.patch             [osx]
 
 build:
+  number: 1                 [win]
   number: 3                 [osx]
   number: 4                 [linux]
 
@@ -20,8 +21,8 @@ requirements:
     - cmake
     - eigen3
     - flann
-    - libpng                [unix]
-    - zlib                  [unix]
+    - libpng
+    - zlib
     - pkg-config            [unix]
     - gcc                   [linux]
   run:
