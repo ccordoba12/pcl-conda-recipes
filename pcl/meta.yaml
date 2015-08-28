@@ -6,7 +6,6 @@ source:
   fn:  pcl-1.7.2.tar.gz
   url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz
   patches:
-    - supervoxel.patch      [win]
     - gp3_surface.patch     [win]
     - mls_smoothing.patch   [win]
     - pcd.patch             [osx]

@@ -11,7 +11,7 @@
  
 @@ -118,6 +118,7 @@
  
-   print_info ("[done, "); print_value ("%g", tt.toc ()); print_info (" ms : "); print_value ("%zu", output.polygons.size ()); print_info (" polygons]\n");
+   print_info ("[done, "); print_value ("%g", tt.toc ()); print_info (" ms : "); print_value ("%lu", output.polygons.size ()); print_info (" polygons]\n");
  }
 +
  
