@@ -22,6 +22,22 @@ cmake .. -G %CMAKE_GENERATOR% ^
 
 cmake --build . --config Release
 
-mkdir %LIBRARY_LIB%
+rem mkdir %LIBRARY_PREFIX%\src
+mkdir %LIBRARY_PREFIX%\src\gtest
+
 copy /y Release\*.lib %LIBRARY_LIB% > nul
+if errorlevel 1 exit 1
+
+cd ..
+
+xcopy include %LIBRARY_INC% /E /I > nul
+if errorlevel 1 exit 1
+
+xcopy src  %LIBRARY_PREFIX%\src\gtest\src /E /I > nul
+if errorlevel 1 exit 1
+
+xcopy cmake %LIBRARY_PREFIX%\src\gtest\cmake /E /I > nul
+if errorlevel 1 exit 1
+
+copy /y CmakeLists.txt %LIBRARY_PREFIX%\src\gtest > nul
 if errorlevel 1 exit 1
