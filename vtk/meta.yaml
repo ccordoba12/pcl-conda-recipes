@@ -1,0 +1,30 @@
+package:
+  name: vtk
+  version: 6.2.0
+
+source:
+  url: http://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz
+  fn:  vtk-6.2.0.tar.gz
+  patches:
+    - dlls.patch                              [win]
+
+build:
+  has_prefix_files:                           [win]
+    - Lib/site-packages/vtk/__init__.py       [win]
+
+requirements:
+  build:
+    - cmake
+    - python
+    - boost        <1.56.0
+  run:
+    - python
+    - boost        <1.56.0
+
+test:
+  imports:
+    - vtk
+
+about:
+  home: http://www.vtk.org/
+  license: BSD
