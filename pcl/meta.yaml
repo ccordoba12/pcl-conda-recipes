@@ -29,8 +29,8 @@ requirements:
     - boost       <1.56.0
     - eigen3
     - flann
-    - libpng                [unix]
-    - zlib                  [unix]
+    - libpng
+    - zlib
     - libgcc                [linux]
 
 about:
