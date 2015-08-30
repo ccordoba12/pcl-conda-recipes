@@ -1,0 +1,13 @@
+--- test/search/test_organized.cpp.old	Sat Aug 29 14:26:07 2015
++++ test/search/test_organized.cpp	Sat Aug 29 14:34:58 2015
+@@ -41,6 +41,10 @@
+ 
+ #include <stdio.h>
+ 
++#include <boost/cstdint.hpp>
++using boost::uint32_t;
++using boost::uint64_t;
++
+ using namespace std;
+ 
+ #include <pcl/common/time.h>

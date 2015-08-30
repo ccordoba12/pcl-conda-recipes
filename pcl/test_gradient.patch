@@ -1,0 +1,11 @@
+--- test/features/test_gradient_estimation.cpp.old	Sat Aug 29 11:40:29 2015
++++ test/features/test_gradient_estimation.cpp	Sat Aug 29 11:51:08 2015
+@@ -66,7 +66,7 @@
+       cloud_xyzi.points.push_back (p);
+     }
+   }
+-  cloud_xyzi.width = static_cast<uint32_t> (cloud_xyzi.points.size ());
++  cloud_xyzi.width = static_cast<boost::uint32_t> (cloud_xyzi.points.size ());
+   PointCloud<PointXYZI>::ConstPtr cloud_ptr = cloud_xyzi.makeShared ();
+ 
+   // Estimate surface normals

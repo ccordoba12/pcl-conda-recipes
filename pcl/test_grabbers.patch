@@ -1,0 +1,13 @@
+--- test/io/test_grabbers.cpp.old	Sat Aug 29 14:05:05 2015
++++ test/io/test_grabbers.cpp	Sat Aug 29 14:05:19 2015
+@@ -9,6 +9,10 @@
+ #include <string>
+ #include <vector>
+ 
++#include <boost/cstdint.hpp>
++using boost::uint64_t;
++using boost::uint32_t;
++
+ using namespace std;
+ 
+ typedef pcl::PointXYZRGBA PointT;

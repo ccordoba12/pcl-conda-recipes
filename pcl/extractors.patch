@@ -1,0 +1,12 @@
+--- io/include/pcl/io/impl/point_cloud_image_extractors.hpp.old	Fri Aug 28 19:13:56 2015
++++ io/include/pcl/io/impl/point_cloud_image_extractors.hpp	Fri Aug 28 19:14:08 2015
+@@ -45,6 +45,9 @@
+ 
+ #include <pcl/common/io.h>
+ 
++#include <boost/cstdint.hpp>
++using boost::uint8_t;
++
+ ///////////////////////////////////////////////////////////////////////////////////////////
+ template <typename PointT> bool
+ pcl::io::PointCloudImageExtractor<PointT>::extract (const PointCloud& cloud, pcl::PCLImage& img) const

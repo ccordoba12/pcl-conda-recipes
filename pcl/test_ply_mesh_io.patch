@@ -1,0 +1,12 @@
+--- test/io/test_ply_mesh_io.cpp.old	Fri Aug 28 19:35:23 2015
++++ test/io/test_ply_mesh_io.cpp	Fri Aug 28 19:35:30 2015
+@@ -51,6 +51,9 @@
+ #include <locale>
+ #include <stdexcept>
+ 
++#include <boost/cstdint.hpp>
++using boost::uint8_t;
++
+ std::string mesh_file_vtk_;
+ 
+ 

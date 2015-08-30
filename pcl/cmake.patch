@@ -1,0 +1,15 @@
+--- test/CMakeLists.txt.old	Sat Aug 29 17:52:24 2015
++++ test/CMakeLists.txt	Sat Aug 29 17:52:28 2015
+@@ -44,9 +44,9 @@
+     add_subdirectory(surface)
+     add_subdirectory(sample_consensus)
+ 
+-    PCL_ADD_TEST(a_bearing_angle_image_test test_bearing_angle_image
+-                 FILES test_bearing_angle_image.cpp
+-                 LINK_WITH pcl_gtest pcl_common pcl_io)
++    #PCL_ADD_TEST(a_bearing_angle_image_test test_bearing_angle_image
++    #             FILES test_bearing_angle_image.cpp
++    #             LINK_WITH pcl_gtest pcl_common pcl_io)
+ 
+ 	  PCL_ADD_TEST(a_recognition_ism_test test_recognition_ism
+                  FILES test_recognition_ism.cpp

@@ -1,0 +1,20 @@
+--- test/surface/test_ear_clipping.cpp.old	Sat Aug 29 11:57:20 2015
++++ test/surface/test_ear_clipping.cpp	Sat Aug 29 11:57:28 2015
+@@ -72,7 +72,7 @@
+   cloud->points.push_back (PointXYZ ( 4.f, 7.f, 0.5f));
+   cloud->points.push_back (PointXYZ ( 2.f, 5.f, 0.5f));
+   cloud->points.push_back (PointXYZ (-1.f, 8.f, 0.5f));
+-  cloud->width = static_cast<uint32_t> (cloud->points.size ());
++  cloud->width = static_cast<boost::uint32_t> (cloud->points.size ());
+ 
+   Vertices vertices;
+   vertices.vertices.resize (cloud->points.size ());
+@@ -120,7 +120,7 @@
+   cloud->points.push_back (PointXYZ ( 1.f, 0.f, 1.f));
+   cloud->points.push_back (PointXYZ ( 1.f, 1.f, 1.f));
+   cloud->points.push_back (PointXYZ ( 0.f, 1.f, 1.f));
+-  cloud->width = static_cast<uint32_t> (cloud->points.size ());
++  cloud->width = static_cast<boost::uint32_t> (cloud->points.size ());
+ 
+   Vertices vertices;
+   vertices.vertices.resize(4);
