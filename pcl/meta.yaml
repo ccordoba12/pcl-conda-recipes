@@ -30,7 +30,7 @@ source:
     - pcd.patch                   [osx]
 
 build:
-  number: 2                       [win]
+  number: 3                       [win]
   number: 3                       [osx]
   number: 4                       [linux]
 

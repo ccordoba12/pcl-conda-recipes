@@ -29,3 +29,26 @@ if errorlevel 1 exit 1
 
 cmake --build . --config Release --target INSTALL
 if errorlevel 1 exit 1
+
+rem Add all tests to the package
+copy /y bin\test*.exe %LIBRARY_BIN% > nul
+if errorlevel 1 exit 1
+
+rem Copy files needed for tests
+set PCL_TEST_FILES=%LIBRARY_BIN%\pcl_test_files
+mkdir %PCL_TEST_FILES%
+
+copy /y ..\test\*.pcd %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
+copy /y ..\test\*.py %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
+copy /y ..\test\*.jpg %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
+copy /y ..\test\*.vtk %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
+xcopy ..\test\grabber_sequences %PCL_TEST_FILES%\grabber_sequences /E /I > nul
+if errorlevel 1 exit 1
