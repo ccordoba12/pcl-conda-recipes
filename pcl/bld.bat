@@ -41,6 +41,9 @@ mkdir %PCL_TEST_FILES%
 copy /y ..\test\*.pcd %PCL_TEST_FILES% > nul
 if errorlevel 1 exit 1
 
+copy /y ..\test\*.txt %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
 copy /y ..\test\*.py %PCL_TEST_FILES% > nul
 if errorlevel 1 exit 1
 
@@ -50,5 +53,11 @@ if errorlevel 1 exit 1
 copy /y ..\test\*.vtk %PCL_TEST_FILES% > nul
 if errorlevel 1 exit 1
 
+copy /y ..\test\kdtree\*.xml %PCL_TEST_FILES% > nul
+if errorlevel 1 exit 1
+
 xcopy ..\test\grabber_sequences %PCL_TEST_FILES%\grabber_sequences /E /I > nul
+if errorlevel 1 exit 1
+
+copy /y ..\people\data\*.yaml %PCL_TEST_FILES% > nul
 if errorlevel 1 exit 1
