@@ -11,6 +11,7 @@ source:
     - ext_args_osx.patch                      [osx]
 
 build:
+  number: 1                                   [win]
   number: 1                                   [osx]
   number: 2                                   [linux]
   has_prefix_files:                           [win]
