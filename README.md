@@ -13,5 +13,7 @@ The build order to follow is this:
 * `conda build flann`
 * `conda build icu`         (only on Linux and Mac)
 * `conda build boost`
+* `conda build vtk`         (only on Windows)
+* `conda build gtest`       (only on Windows)
 * `conda build pcl`
 * `conda build python-pcl`
