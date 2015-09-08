@@ -17,9 +17,15 @@ if %ARCH%==64 (
 )
 
 cmake .. -G %CMAKE_GENERATOR% ^
- -DCMAKE_BUILD_TYPE=Release ^
- -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
- -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX%
+   -Wno-dev ^
+   -DCMAKE_BUILD_TYPE=Release ^
+   -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+   -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+   -DBUILD_MATLAB_BINDINGS=OFF ^
+   -DBUILD_PYTHON_BINDINGS=OFF
 
-cmake --build . --config Release --target ALL_BUILD
+cmake --build . --config Release --target ALL_BUILD 1>output.txt 2>&1
+if errorlevel 1 exit 1
+
 cmake --build . --config Release --target INSTALL
+if errorlevel 1 exit 1
