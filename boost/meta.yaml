@@ -3,14 +3,15 @@ package:
   version: 1.55.0
 
 source:
-  fn:  boost_1_55_0-msvc-9.0-64.exe                                                                        [win64]
-  url: http://downloads.sourceforge.net/project/boost/boost-binaries/1.55.0/boost_1_55_0-msvc-9.0-64.exe   [win64]
-  fn:  boost_1_55_0.tar.bz2                                                                                [unix]
-  url: http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2                       [unix]
+  fn:  boost_1_55_0-msvc-11.0-64.exe                                                                         [win64]
+  url: http://downloads.sourceforge.net/project/boost/boost-binaries/1.55.0/boost_1_55_0-msvc-11.0-64.exe    [win64]
+  fn:  boost_1_55_0.tar.bz2                                                                                  [unix]
+  url: http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2                         [unix]
   patches:
     - patch-atomic.diff    [osx]
 
 build:
+  number: 1                [win]
   number: 2                [osx]
   number: 3                [linux]
 
@@ -19,7 +20,6 @@ requirements:
     - python     <3
     - icu                  [unix]
     - bzip2                [unix]
-    - libpython            [win]
     - gcc                  [linux]
 
   run:
