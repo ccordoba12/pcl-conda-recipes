@@ -6,6 +6,9 @@ source:
   fn: eigen3-3.2.5.tar.gz
   url: http://bitbucket.org/eigen/eigen/get/3.2.5.tar.bz2
 
+build:
+  number: 1       [win]
+
 requirements:
   build:
     - cmake
