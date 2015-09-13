@@ -6,13 +6,13 @@ cd build
 rem Need to handle Python 3.x case at some point (Visual Studio 2010)
 if %ARCH%==32 (
   if %PY_VER% LSS 3 (
-    set CMAKE_GENERATOR="Visual Studio 9 2008"
+    set CMAKE_GENERATOR="Visual Studio 11 2012"
   )
 )
 
 if %ARCH%==64 (
   if %PY_VER% LSS 3 (
-    set CMAKE_GENERATOR="Visual Studio 9 2008 Win64"
+    set CMAKE_GENERATOR="Visual Studio 11 2012 Win64"
   )
 )
 
@@ -28,4 +28,11 @@ cmake --build . --config Release --target ALL_BUILD 1>output.txt 2>&1
 if errorlevel 1 exit 1
 
 cmake --build . --config Release --target INSTALL
+if errorlevel 1 exit 1
+
+rem Copy VS 2012 runtime libraries
+copy C:\Windows\System32\msvcr110.dll %PREFIX%
+if errorlevel 1 exit 1
+
+copy C:\Windows\System32\msvcp110.dll %PREFIX%
 if errorlevel 1 exit 1
