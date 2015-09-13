@@ -1,6 +1,6 @@
 @echo off
 
-rem This needed for pkg-config to detect pcl and eigen3 pc files
+rem This is needed for pkg-config to detect pcl and eigen3 pc files
 set PKG_CONFIG_PATH=%LIBRARY_LIB%\pkgconfig
 
 rem Override distutils VS detection
