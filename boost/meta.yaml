@@ -11,13 +11,13 @@ source:
     - patch-atomic.diff    [osx]
 
 build:
-  number: 1                [win]
+  number: 2                [win]
   number: 2                [osx]
   number: 3                [linux]
 
 requirements:
   build:	
-    - python     <3
+    - python     <3        [unix]
     - icu                  [unix]
     - bzip2                [unix]
     - gcc                  [linux]
