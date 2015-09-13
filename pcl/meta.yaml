@@ -6,31 +6,10 @@ source:
   fn:  pcl-1.7.2.tar.gz
   url: https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz
   patches:
-    - gp3_surface.patch           [win]
-    - mls_smoothing.patch         [win]
-    - eigen.patch                 [win]
-    - extractors.patch            [win]
-    - test_ply.patch              [win]
-    - test_pfh.patch              [win]
-    - test_gradient.patch         [win]
-    - test_filters.patch          [win]
-    - test_ear.patch              [win]
-    - test_rift.patch             [win]
-    - test_spin.patch             [win]
-    - test_grabbers.patch         [win]
-    - test_kdtree.patch           [win]
-    - test_outofcore.patch        [win]
-    - test_kdtree1.patch          [win]
-    - test_organized.patch        [win]
-    - octree_base.patch           [win]
-    - outofcore_cloud.patch       [win]
-    - no_test_bearing.patch       [win]
-    - no_test_registration.patch  [win]
-    - no_test_mesh.patch          [win]
     - pcd.patch                   [osx]
 
 build:
-  number: 3                       [win]
+  number: 4                       [win]
   number: 3                       [osx]
   number: 4                       [linux]
 
@@ -42,8 +21,6 @@ requirements:
     - flann
     - libpng
     - zlib
-    - vtk         >=6.2           [win]
-    - gtest                       [win]
     - pkg-config                  [unix]
     - gcc                         [linux]
   run:
@@ -52,7 +29,6 @@ requirements:
     - flann
     - libpng
     - zlib
-    - vtk         >=6.2           [win]
     - libgcc                      [linux]
 
 about:
