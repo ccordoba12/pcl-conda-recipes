@@ -19,4 +19,4 @@ The build order to follow is this:
 ----
 
 **Note**: We're using Visual Studio 2012 on Windows. Unfortunately, older
-compilers make python-pcl to segfault.
+compilers make `python-pcl` to segfault.
