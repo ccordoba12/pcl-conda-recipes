@@ -15,3 +15,8 @@ The build order to follow is this:
 * `conda build boost`
 * `conda build pcl`
 * `conda build python-pcl`
+
+----
+
+**Note**: We're using Visual Studio 2012 on Windows. Unfortunately, older
+compilers make python-pcl to segfault.
