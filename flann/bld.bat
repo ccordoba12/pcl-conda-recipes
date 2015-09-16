@@ -31,8 +31,5 @@ cmake --build . --config Release --target INSTALL
 if errorlevel 1 exit 1
 
 rem Copy VS 2012 runtime libraries
-copy C:\Windows\System32\msvcr110.dll %PREFIX%
-if errorlevel 1 exit 1
-
-copy C:\Windows\System32\msvcp110.dll %PREFIX%
+copy C:\Windows\System32\vcomp110.dll %LIBRARY_BIN%
 if errorlevel 1 exit 1

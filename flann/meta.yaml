@@ -9,7 +9,7 @@ source:
     - win64.patch       [win]
 
 build:
-  number: 2             [win]
+  number: 3             [win]
   number: 1             [linux]
 
 requirements:
